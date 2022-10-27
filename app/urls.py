@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from goNetwork.api.router import router_ubication
+from goNetwork.api.router import router_sede,router_device
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router_ubication.urls)),
+    path('api/', include(router_sede.urls)),
+    path('api/', include(router_device.urls)),
 ]

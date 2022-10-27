@@ -1,13 +1,20 @@
-from goNetwork.models import Ubication
+from goNetwork.models import Sede, Device
 from rest_framework import viewsets
 from rest_framework import permissions
-from goNetwork.api.serializers import UbicationSerializer
+from goNetwork.api.serializers import SedeSerializer, DeviceSerializer
 
 
-class UbicationViewSet(viewsets.ModelViewSet):
+class SedeViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Ubication.objects.all().order_by('id')
-    serializer_class = UbicationSerializer
+    queryset = Sede.objects.all().order_by('id')
+    serializer_class = SedeSerializer
     #permission_classes = [permissions.IsAuthenticated]
+
+class DeviceViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Device.objects.all().order_by('id')
+    serializer_class = DeviceSerializer
