@@ -2,45 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Sede(models.Model):
-    COUNTRY = (
-        ('CO','Colombia'),
-        ('HA','Haiti'),
-        ('HO','Honduras'),
-        ('PA','Panama'),
-        ('PR','Puerto Rico'),
-        ('RD','Republica Dominicana'),
-        ('US','Estados Unidos'),
-    )
-    COMPANY = (
-        ('CEL','Celsia'),
-        ('CEM','Cementos Argos'),
-        ('GRP','Grupo Argos'),
-        ('CGA','Cementos Argos - Grupo Argos'),
-        ('INT','Interejecutiva'),
-        ('SAT','Sator'),
-        ('SUM','Summa'),
-    )
-    BUSSINESS = (
-        ('AGR','Agregados'),
-        ('CEL','Celsia'),
-        ('GEM','Cementos'),
-        ('CON','Concretos'),
-        ('GRP','Grupo Argos'),
-        ('LOG','Logitrans'),
-        ('SAT','Sator'),
-        ('SUM','Summa'),
-        ('ZNF','Zona Franca'),
-    )
-    TYPE = (
-        ('ADM','Administrativa'),
-        ('PLT','Planta'),
-        ('SUB','Subestacion')
-    )
-    name = models.CharField(max_length=15)
-    country = models.CharField(max_length=2, choices=COUNTRY)
-    company = models.CharField(max_length=3, choices=COMPANY)
-    business = models.CharField(max_length=4, choices=BUSSINESS)    
-    type_sede = models.CharField(max_length=4, choices=TYPE)
+
+    name = models.CharField(max_length=20)
+    country = models.CharField(max_length=20)
+    company = models.CharField(max_length=20)
+    business = models.CharField(max_length=20)   
+    type_sede = models.CharField(max_length=20)
 
     def __str__(self):
         return '%s_%s_%s_%s_%s' % (self.name, self.type_sede, self.country, self.company, self.business)

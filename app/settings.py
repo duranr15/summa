@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'polls',
     'rest_framework',
     'goNetwork',
+    'sede',
+    'location',
 ]
 
 MIDDLEWARE = [
